@@ -42,6 +42,13 @@ function nameGenerator() {
             return true;
         }
     }
+    function validatingcob() {
+        if (cob/100 && yob.length != 2) {
+            alert("Enter a valid century");
+        } else {
+            return true;
+        }
+    }
     let validateddob =validatingdob();
     let validatedmob =validatingmob();
     let validatedyob =validatingyob();
