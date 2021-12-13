@@ -34,6 +34,7 @@
 }
 .gender {
     color:blue;
+    text-decoration: underline;
 }
 .date-input {
     display: grid;
@@ -41,4 +42,7 @@
 }
 .message {
     padding: 18px 0px 0px 0px;
+}
+.submit-sec {
+    padding: 40px 10px 2px 25px;
 }
