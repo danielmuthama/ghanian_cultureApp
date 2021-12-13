@@ -3,10 +3,10 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    flex-basis: auto;
+    flex-basis: 1;
 }
 .section-1 {
-    height: 15vh;
+    height: 10vh;
     width: 55%;
     background-color: aqua;
     padding: 2% 3% 2% 3%;
@@ -14,7 +14,7 @@
 
 }
 .section-2 {
-    height: auto;
+    height: 55vh;
     width: 55%;
     background-color: white;
     padding: 2% 3% 2% 3%;
@@ -22,10 +22,20 @@
 
 }
 .section-3 {
-    height: auto;
+    height: 5vh;
     width: 55%;
     background-color: aqua;
     padding: 2% 3% 2% 3%;
     border: 4px solid black;
-
+}
+.birth-details {
+    text-decoration: underline;
+    color:blue;
+}
+.gender {
+    color:blue;
+}
+.date-input {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
 }
