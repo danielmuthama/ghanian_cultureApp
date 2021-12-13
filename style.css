@@ -42,6 +42,8 @@
 }
 .message {
     padding: 18px 0px 0px 0px;
+    font-size: 20px;
+    font-weight: 500;
 }
 .submit-section {
     padding: 40px 8px 2px 25px;

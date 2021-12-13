@@ -6,7 +6,6 @@ function nameGenerator() {
     let dob = Number(document.getElementById("day").value);
     let mob = Number(document.getElementById("month").value);
     let yob = Number(document.getElementById("year").value);
-    let cob = Number(document.getElementById("century").value);
     let sex = document.getElementsByName("gender");
 
 
@@ -42,13 +41,7 @@ function nameGenerator() {
             return true;
         }
     }
-    function validatingcob() {
-        if (cob/100 && yob.length != 2) {
-            alert("Enter a valid century");
-        } else {
-            return true;
-        }
-    }
+
     function gender() {
         for (let gender of sex) {
             if (gender.checked) {
@@ -59,87 +52,72 @@ function nameGenerator() {
     let validateddob =validatingdob();
     let validatedmob =validatingmob();
     let validatedyob =validatingyob();
-    let validatedcob =validatingcob();
     let checkedgender = gender();
 
-    let dofWeekNumber = Math.floor((((Number(cob.slice(0, 2)) / 4) - 2 * Number(cob.slice(0, 2)) - 1) +
+    let dofWeekNumber = Math.floor((((Number(yob.slice(0, 2)) / 4) - 2 * Number(yob.slice(0, 2)) - 1) +
     ((5 * Number(yob.slice(2, 4)) / 4)) + ((26 * (mob + 1) / 10)) + dob) % 7);
 
-    if (checkedgender == "male" && validateddob && validatedmob && validatedyob && validatedcob) {
+    if (checkedgender == "male" && validateddob && validatedmob && validatedyob) {
        
         switch (dofWeekNumber) {
             case 1:
-                document.getElementById("inp-name").innerHTML = " " + male[0];
-                document.getElementById("inp-day").innerHTML = " " + day[0];
-                document.getElementById("anim").innerHTML = " " + male[0];
+                document.getElementById("name").innerHTML = " " + male[0];
+                document.getElementById("day").innerHTML = " " + day[0];
                 return false;
             case 2:
-                document.getElementById("inp-name").innerHTML = " " + male[1];
-                document.getElementById("inp-day").innerHTML = " " + day[1];
-                document.getElementById("anim").innerHTML = " " + male[1];
+                document.getElementById("ame").innerHTML = " " + male[1];
+                document.getElementById("day").innerHTML = " " + day[1];
                 return false;
             case 3:
-                document.getElementById("inp-name").innerHTML = " " + male[2];
-                document.getElementById("inp-day").innerHTML = " " + day[2];
-                document.getElementById("anim").innerHTML = " " + male[2];
+                document.getElementById("name").innerHTML = " " + male[2];
+                document.getElementById("day").innerHTML = " " + day[2];
                 return false;
             case 4:
-                document.getElementById("inp-name").innerHTML = " " + male[3];
-                document.getElementById("inp-day").innerHTML = " " + day[3];
-                document.getElementById("anim").innerHTML = " " + male[3];
+                document.getElementById("name").innerHTML = " " + male[3];
+                document.getElementById("day").innerHTML = " " + day[3];
                 return false;
             case 5:
-                document.getElementById("inp-name").innerHTML = " " + male[4];
-                document.getElementById("inp-day").innerHTML = " " + day[4];
-                document.getElementById("anim").innerHTML = " " + male[4];
+                document.getElementById("name").innerHTML = " " + male[4];
+                document.getElementById("day").innerHTML = " " + day[4];
                 return false;
             case 6:
-                document.getElementById("inp-name").innerHTML = " " + male[5];
-                document.getElementById("inp-day").innerHTML = " " + day[5];
-                document.getElementById("anim").innerHTML = " " + male[5];
+                document.getElementById("name").innerHTML = " " + male[5];
+                document.getElementById("day").innerHTML = " " + day[5];
                 return false;
             case 7:
-                document.getElementById("inp-name").innerHTML = " " + male[6];
-                document.getElementById("inp-day").innerHTML = " " + day[6];
-                document.getElementById("anim").innerHTML = " " + male[6];
+                document.getElementById("name").innerHTML = " " + male[6];
+                document.getElementById("day").innerHTML = " " + day[6];
                 return false;
         }
-    } else if (checkedgender == "female" && validateddob && validatedmob && validatedyob && validatedcob) {
+    } else if (checkedgender == "female" && validateddob && validatedmob && validatedyob) {
         switch (dayOfWeekNumber) {
             case 1:
-                document.getElementById("inp-name").innerHTML = " " + female[0];
-                document.getElementById("inp-day").innerHTML = " " + day[0];
-                document.getElementById("anim").innerHTML = " " + female[0];
+                document.getElementById("name").innerHTML = " " + female[0];
+                document.getElementById("day").innerHTML = " " + day[0];
                 return false;
             case 2:
-                document.getElementById("inp-name").innerHTML = " " + female[1];
-                document.getElementById("inp-day").innerHTML = " " + day[1];
-                document.getElementById("anim").innerHTML = " " + female[1];
+                document.getElementById("name").innerHTML = " " + female[1];
+                document.getElementById("day").innerHTML = " " + day[1];
                 return false;
             case 3:
-                document.getElementById("inp-name").innerHTML = " " + female[2];
-                document.getElementById("inp-day").innerHTML = " " + day[2];
-                document.getElementById("anim").innerHTML = " " + female[2];
+                document.getElementById("name").innerHTML = " " + female[2];
+                document.getElementById("day").innerHTML = " " + day[2];
                 return false;
             case 4:
-                document.getElementById("inp-name").innerHTML = " " + female[3];
-                document.getElementById("inp-day").innerHTML = " " + day[3];
-                document.getElementById("anim").innerHTML = " " + female[3];
+                document.getElementById("name").innerHTML = " " + female[3];
+                document.getElementById("day").innerHTML = " " + day[3];
                 return false;
             case 5:
-                document.getElementById("inp-name").innerHTML = " " + female[4];
-                document.getElementById("inp-day").innerHTML = " " + day[4];
-                document.getElementById("anim").innerHTML = " " + female[4];
+                document.getElementById("name").innerHTML = " " + female[4];
+                document.getElementById("day").innerHTML = " " + day[4];
                 return false;
             case 6:
-                document.getElementById("inp-name").innerHTML = " " + female[5];
-                document.getElementById("inp-day").innerHTML = " " + day[5];
-                document.getElementById("anim").innerHTML = " " + female[5];
+                document.getElementById("name").innerHTML = " " + female[5];
+                document.getElementById("day").innerHTML = " " + day[5];
                 return false;
             case 7:
-                document.getElementById("inp-name").innerHTML = " " + female[6];
-                document.getElementById("inp-day").innerHTML = " " + day[6];
-                document.getElementById("anim").innerHTML = " " + female[6];
+                document.getElementById("name").innerHTML = " " + female[6];
+                document.getElementById("day").innerHTML = " " + day[6];
                 return false;
         }
     }
