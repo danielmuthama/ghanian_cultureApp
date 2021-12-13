@@ -14,7 +14,7 @@
 
 }
 .section-2 {
-    height: 10vh;
+    height: auto;
     width: 55%;
     background-color: white;
     padding: 2% 3% 2% 3%;
@@ -22,7 +22,7 @@
 
 }
 .section-3 {
-    height: 2vh;
+    height: auto;
     width: 55%;
     background-color: aqua;
     padding: 2% 3% 2% 3%;
