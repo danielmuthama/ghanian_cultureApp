@@ -42,4 +42,9 @@ function nameGenerator() {
             return true;
         }
     }
+    let validateddob =validatingdob();
+    let validatedmob =validatingmob();
+    let validatedyob =validatingyob();
+    let validatedcob =validatingcob()
+
 }
