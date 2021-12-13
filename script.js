@@ -65,4 +65,45 @@ function nameGenerator() {
     let dofWeekNumber = Math.floor((((Number(cob.slice(0, 2)) / 4) - 2 * Number(cob.slice(0, 2)) - 1) +
     ((5 * Number(yob.slice(2, 4)) / 4)) + ((26 * (mob + 1) / 10)) + dob) % 7);
 
+    if (checkedgender == "male" && validateddob && validatedmob && validatedyob && validatedcob) {
+       
+        switch (dofWeekNumber) {
+            case 1:
+                document.getElementById("inp-name").innerHTML = " " + maleNames[0];
+                document.getElementById("inp-day").innerHTML = " " + dayNames[0];
+                document.getElementById("anim").innerHTML = " " + maleNames[0];
+                return false;
+            case 2:
+                document.getElementById("inp-name").innerHTML = " " + maleNames[1];
+                document.getElementById("inp-day").innerHTML = " " + dayNames[1];
+                document.getElementById("anim").innerHTML = " " + maleNames[1];
+                return false;
+            case 3:
+                document.getElementById("inp-name").innerHTML = " " + maleNames[2];
+                document.getElementById("inp-day").innerHTML = " " + dayNames[2];
+                document.getElementById("anim").innerHTML = " " + maleNames[2];
+                return false;
+            case 4:
+                document.getElementById("inp-name").innerHTML = " " + maleNames[3];
+                document.getElementById("inp-day").innerHTML = " " + dayNames[3];
+                document.getElementById("anim").innerHTML = " " + maleNames[3];
+                return false;
+            case 5:
+                document.getElementById("inp-name").innerHTML = " " + maleNames[4];
+                document.getElementById("inp-day").innerHTML = " " + dayNames[4];
+                document.getElementById("anim").innerHTML = " " + maleNames[4];
+                return false;
+            case 6:
+                document.getElementById("inp-name").innerHTML = " " + maleNames[5];
+                document.getElementById("inp-day").innerHTML = " " + dayNames[5];
+                document.getElementById("anim").innerHTML = " " + maleNames[5];
+                return false;
+            case 7:
+                document.getElementById("inp-name").innerHTML = " " + maleNames[6];
+                document.getElementById("inp-day").innerHTML = " " + dayNames[6];
+                document.getElementById("anim").innerHTML = " " + maleNames[6];
+                return false;
+        }
+    }
+    
 }
