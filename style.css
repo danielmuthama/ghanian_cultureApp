@@ -22,7 +22,7 @@
 
 }
 .section-3 {
-    height: 5vh;
+    height: 8vh;
     width: 55%;
     background-color: aqua;
     padding: 2% 3% 2% 3%;
@@ -49,5 +49,8 @@
 #submit {
     padding: 10px 35px 10px 35px;
     box-shadow: 0px 5px 5px blue;
-
+}
+.copyright {
+    padding: 0px 0px 8px 0px;
+    height: 100%;
 }
