@@ -7,7 +7,7 @@ function nameGenerator() {
     let mob = Number(document.getElementById("month").value);
     let yob = Number(document.getElementById("year").value);
     let cob = Number(document.getElementById("century").value);
-    let gender = document.getElementsByName("gender");
+    let sex = document.getElementsByName("gender");
 
 
     function validatingdob() {
@@ -49,9 +49,20 @@ function nameGenerator() {
             return true;
         }
     }
+    function gender() {
+        for (let gender of sex) {
+            if (gender.checked) {
+                return gender.value;
+            }
+        }
+    }
     let validateddob =validatingdob();
     let validatedmob =validatingmob();
     let validatedyob =validatingyob();
-    let validatedcob =validatingcob()
+    let validatedcob =validatingcob();
+    let checkedgender = gender();
+
+    let dofWeekNumber = Math.floor((((Number(cob.slice(0, 2)) / 4) - 2 * Number(cob.slice(0, 2)) - 1) +
+    ((5 * Number(yob.slice(2, 4)) / 4)) + ((26 * (mob + 1) / 10)) + dob) % 7);
 
 }
