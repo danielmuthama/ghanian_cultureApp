@@ -9,17 +9,19 @@ function nameGenerator() {
     let cob = Number(document.getElementById("century").value);
     let gender = document.getElementsByName("gender");
 
-    function ValidateDay() {
-        if (month === 2 && Number(yearOfBirth) % 4 === 0) {
+
+    function validatingdob() {
+
+        if (month === 2 && yob % 4 === 0) {
             if (day < 1 || day > 28) {
-                alert("please enter a valid date(\"1-28\")");
+                alert("This isn't a leap year enter a valid date between 1 and 28");
             } else if (day < 1 && day > 29) {
-                alert("please enter a valid date(\"1-29\")");
+                alert("This is a leap year enter a valid date between 1 and 29");
             } else {
                 return true;
             }
         } else if (day < 1 || day > 31) {
-            alert("Please enter valid date(\"1-31\")");
+            alert("Enter a valid date between 1 and 31");
         } else {
             return true;
         }
@@ -28,8 +30,16 @@ function nameGenerator() {
 
     function validatingmob() {
         if (mob < 1 || mob > 12) {
-            alert('Please enter a valid month("1-12")');
+            alert('Enter a valid month between 1 and 12');
         } else {
             return true;
         }
     }
+    function validatingyob() {
+        if (yob < 0001 || yob > 2021 && yob.length != 4) {
+            alert("Enter a four digit number between 0001 and 2021");
+        } else {
+            return true;
+        }
+    }
+}
