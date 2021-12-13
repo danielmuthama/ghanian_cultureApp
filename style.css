@@ -43,6 +43,11 @@
 .message {
     padding: 18px 0px 0px 0px;
 }
-.submit-sec {
-    padding: 40px 10px 2px 25px;
+.submit-section {
+    padding: 40px 8px 2px 25px;
+}
+#submit {
+    padding: 10px 35px 10px 35px;
+    box-shadow: 0px 5px 5px blue;
+
 }
