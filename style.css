@@ -39,3 +39,6 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
 }
+.message {
+    padding: 18px 0px 0px 0px;
+}
