@@ -19,15 +19,15 @@
     <div class="section-2">
         <div class="form-section">
             <div class="input">
-            <form class="form" onsubmit="nameGenerator()">
+            <form class="form" onsubmit=" return nameGenerator()">
                 <div class="date">
-                    <h3 class="gender"><strong>Select the Gender</strong></h3>
+                    <h2 class="gender"><strong>Select the Gender</strong></h2>
                     <input type="radio" name="gender"  id="f" value="female"> Female<br>
                     <input type="radio" name="gender" id="m" value="male" > Male
                 </div>
                 <div class="day-input">
-                    <h3 class="birth-details"><strong>Birth Details</strong></h3>
-                    <p><strong>Day of Birth</strong></p>
+                    <h2 class="birth-details"><strong>Birth Details</strong></h2>
+                    <h3><strong>Day of Birth</strong></h3>
                     <input type="number" name="dob" id="d" placeholder="DD" value="" required>
                 </div>
                 <div class="month-input">
@@ -41,10 +41,11 @@
                 <div class="submit-section">
                 <input type="submit" value="SUBMIT" id="submit">
                 </div>
+                <div class="names">
+                    <p class="message">My is <span id="input-name">-----</span>, I was born in <span id="input-day">----- </span></p>
+                </div>
             </form>
-            <div class="names">
-                <p class="message">My is <span id="input-name">-----</span>, I was born in <span id="input-day">----- </span></p>
-            </div>
+
             </div>
         </div>
     </div>

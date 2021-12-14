@@ -1,7 +1,6 @@
 function nameGenerator() {
-
-    let female = ["Akosua", "Adwoa", "Abenaa", "Akua", "Yaa", "Afua", "Ama"];
     let male= ["Kwasi", "Kwadwo", "Kwabena", "Kwaku", "Yaw", "Kofi", "Kwame"];
+    let female = ["Akosua", "Adwoa", "Abenaa", "Akua", "Yaa", "Afua", "Ama"];
     let day = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
     
 
@@ -56,7 +55,7 @@ function nameGenerator() {
     alert("please put the Gender male or female")
 }
 
-function calculatingcob(c,d) {  
+/*function calculatingcob(c,d) {  
     let c = yob%100;
     let d = Math.floor(yob+100) + 1;
     if (c.length == 2 && yob > 1 && yob < 2021 ) {
@@ -65,18 +64,20 @@ function calculatingcob(c,d) {
         return d;
         }         
 
-    } 
+    } */
 
     let validateddob =validatingdob();
     let validatedmob =validatingmob();
     let validatedyob =validatingyob();
     let checkedgender = gender();
-    let cob = calculatingcob();
+    //let cob = calculatingcob();
 
 
-
-    let dayOfWeekNumber = Math.floor((((Number(cob) / 4) - 2 * Number(cob) - 1) +
-        ((5 * Number(yob) / 4)) + ((26 * (mob + 1) / 10)) + dob) % 7);
+    
+    function randomNumber(min, max) {
+            return Math.floor(Math.random() * (max - min)) + min;
+          }
+    let dayOfWeekNumber = randomNumber(1, 7)
    
     if (checkedgender == "male" && validateddob && validatedmob && validatedyob) {
        
@@ -109,8 +110,9 @@ function calculatingcob(c,d) {
                 document.getElementById("input-name").innerHTML = " " + male[6];
                 document.getElementById("input-day").innerHTML = " " + day[6];
                 return false;
+               
                 default:
-                alert("an expectional error has occurred");
+                alert("an expectional error has occurredd");
         }
     } else if (checkedgender == "female" && validateddob && validatedmob && validatedyob) {
        
