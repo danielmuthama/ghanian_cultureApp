@@ -55,12 +55,15 @@ function nameGenerator() {
     }
     alert("please put the Gender male or female")
 }
-function calculatingcob(c, d) {  
-    if (c.length == 2 || d.length == 2) {
-        return yob%100; 
-    } else {
-        return Math.floor(yob+100) + 1;
-                }         
+
+function calculatingcob(c,d) {  
+    let c = yob%100;
+    let d = Math.floor(yob+100) + 1;
+    if (c.length == 2 && yob > 1 && yob < 2021 ) {
+        return c; 
+    } else if(d.length == 2 && yob > 1 && yob < 2021 ){
+        return d;
+        }         
 
     } 
 
@@ -69,6 +72,7 @@ function calculatingcob(c, d) {
     let validatedyob =validatingyob();
     let checkedgender = gender();
     let cob = calculatingcob();
+
 
 
     let dayOfWeekNumber = Math.floor((((Number(cob) / 4) - 2 * Number(cob) - 1) +
