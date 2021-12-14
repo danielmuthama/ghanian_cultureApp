@@ -36,7 +36,7 @@
     color:blue;
     text-decoration: underline;
 }
-.date-input {
+.form {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
 }
@@ -55,4 +55,8 @@
 .copyright {
     padding: 0px 0px 8px 0px;
     height: 100%;
+}
+#input-name, #input-day {
+    color: blue;
+    font-weight: 800;
 }

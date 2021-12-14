@@ -4,61 +4,56 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio - [Daniel Muthama]</title>
+    <title>Ghanian Culture Naming Scheme</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="shortcut icon" type = "image/jpeg" sizes="96x96" href="assets/dti.jpeg">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
-    <div class="section-1">
+        <div class="section-1">
         <p>Akan names are names derived from Ghanian culture. Frequently in Ghana, children are given their first name by the 'day name' which corresponds to the day in the week they were born. <br> This App classifies and generate these names.</p>
     </div>
-
     <div class="section-2">
-    <div class="form-section">
-    <form class="form" onsubmit="return nameGenerator()">
-        <p class="gender"><strong>Select the Gender</strong></p>
-        <input type="radio" name="gender" value="male" checked> Male<br>
-        <input type="radio" name="gender" value="female"> Female
-        <div class="date-input">
-            <p class="birth-details"><strong>Birth Details</strong></p>
-            <div class="day-input">
-                <label for="dayofbirth">
-                    <p><strong>Day of Birth</strong></p>
-                    <input type="num" name="dob" id="day" placeholder="DD" value="" required>
-                </label>
+        <div class="form-section">
+            <div class="input">
+            <form class="form" onsubmit="return nameGenerator()">
+                <div class="date">
+                <h3 class="gender"><strong>Select the Gender</strong></h3>
+                <input type="radio" name="gender"  value="male" > Male<br>
+                <input type="radio" name="gender"  value="female"> Female
+                </div>
+                <div class="day-input">
+                <h3 class="birth-details"><strong>Birth Details</strong></h3>
+                <p><strong>Day of Birth</strong></p>
+                <input type="number" name="dob" id="d" placeholder="DD" value="" required>
+                </div>
+                <div class="month-input">
+                <h3><strong>Month of Birth</strong></h3>
+                <input type="number" name="mob" id="m" placeholder="MM" value="" required>
+                </div>
+                <div class="year-input">
+                <p><strong>Year of Birth</strong></p>
+                <input type="number" name="yob" id="y" placeholder="YY" value="" required>
+                </div>
+                <div class="submit-section">
+                <input type="submit" value="SUBMIT" id="submit">
+                </div>
+            </form>
+            <div class="names">
+                <p class="message">My is <span id="input-name"> (name) </span>, I was born in <span id="input-day">(day)</span></p>
             </div>
-            <div class="month-input">
-                <label for="monthofbirth">
-                    <p><strong>Month of Birth</strong></p>
-                    <input type="number" name="mob" id="month" placeholder="MM" value="" required>
-                </label>
             </div>
-            <div class="year-input">
-                <label for="yearofbirth">
-                    <p><strong>Year of Birth</strong></p>
-                    <input type="number" name="yof" id="year" placeholder="YY" value="" required>
-                </label>
-            </div>
-
-    <div class="names">
-        <p class="message">My is <span id="name">(name)</span>, I was born in <span class="day">(day)</span></p>
-    </div>
-    <div class="submit-section">
-        <input type="submit" value="SUBMIT" id="submit">
-    </div>
-</div>
-    </form>
-
-    </div>
+        </div>
     </div>
     <div class="section-3">
-        <p class="contact"><a href="https://www.linkedin.com/in/daniel-muthama-577b211a5"><em>Linkedin</em> : https://www.linkedin.com/in/daniel-muthama-577b211a5</a</p>
         <p class="copyright">Copyright <strong>(c)</strong> [2021] [Daniel Muthama]</p>
+    </div>
 
     </div>
-    </div>
-</div>
-<script src="script.js"></script>
+
+    <script src="script.js"></script>
+
 </body>
 </html>
