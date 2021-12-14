@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="shortcut icon" type = "image/jpeg" sizes="96x96" href="assets/dti.jpeg">
     <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
 </head>
 <body>
     <div class="container">
@@ -20,40 +21,42 @@
             <div class="input">
             <form class="form" onsubmit="nameGenerator()">
                 <div class="date">
-                <h3 class="gender"><strong>Select the Gender</strong></h3>
-                <input type="radio" name="gender" id="m" value="male" > Male<br>
-                <input type="radio" name="gender"  id="f" value="female"> Female
+                    <h3 class="gender"><strong>Select the Gender</strong></h3>
+                    <input type="radio" name="gender"  id="f" value="female"> Female<br>
+                    <input type="radio" name="gender" id="m" value="male" > Male
                 </div>
                 <div class="day-input">
-                <h3 class="birth-details"><strong>Birth Details</strong></h3>
-                <p><strong>Day of Birth</strong></p>
-                <input type="number" name="dob" id="d" placeholder="DD" value="" required>
+                    <h3 class="birth-details"><strong>Birth Details</strong></h3>
+                    <p><strong>Day of Birth</strong></p>
+                    <input type="number" name="dob" id="d" placeholder="DD" value="" required>
                 </div>
                 <div class="month-input">
-                <h3><strong>Month of Birth</strong></h3>
-                <input type="number" name="mob" id="m" placeholder="MM" value="" required>
+                    <h3><strong>Month of Birth</strong></h3>
+                    <input type="number" name="mob" id="m" placeholder="MM" value="" required>
                 </div>
                 <div class="year-input">
-                <p><strong>Year of Birth</strong></p>
-                <input type="number" name="yob" id="y" placeholder="YY" value="" required>
+                    <p><strong>Year of Birth</strong></p>
+                    <input type="number" name="yob" id="y" placeholder="YY" value="" required>
                 </div>
                 <div class="submit-section">
                 <input type="submit" value="SUBMIT" id="submit">
                 </div>
             </form>
             <div class="names">
-                <p class="message">My is <span id="input-name"> (input-name) </span>, I was born in <span id="input-day">(input-day)</span></p>
+                <p class="message">My is <span id="input-name">(name)</span>, I was born in <span id="input-day">(day)</span></p>
             </div>
             </div>
         </div>
     </div>
+    
     <div class="section-3">
+        <footer>
         <p class="copyright">Copyright <strong>(c)</strong> [2021] [Daniel Muthama]</p>
+        </footer>
     </div>
 
     </div>
-
-    <script src="script.js"></script>
+    </footer>
 
 </body>
 </html>

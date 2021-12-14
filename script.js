@@ -1,9 +1,10 @@
 function nameGenerator() {
+
     let female = ["Akosua", "Adwoa", "Abenaa", "Akua", "Yaa", "Afua", "Ama"];
     let male= ["Kwasi", "Kwadwo", "Kwabena", "Kwaku", "Yaw", "Kofi", "Kwame"];
     let day = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
     
-    
+
     let dob = Number(document.getElementById("d").value);
     let mob = Number(document.getElementById("m").value);
     let yob = (document.getElementById("y").value);
@@ -11,8 +12,7 @@ function nameGenerator() {
 
 
     function validatingdob() {
-
-        if (mod === 2 && Number(yob) % 4 === 0) {
+        if (mob === 2 && Number(yob) % 4 === 0) {
             if (dob < 1 || dob > 28) {
                 alert("This isn't a leap year enter a valid date between 1 and 28");
             } else if (dob < 1 && dob > 29) {
@@ -35,11 +35,14 @@ function nameGenerator() {
             return true;
         }
     }
+
+
+    
     function validatingyob() {
-        if (Number(yob) < 0001 || Number(yob) > 2021 && yob.length != 4) {
+        if (Number(yob) < 0001 || Number(yob) > 2021 || yob.length != 4) {
             alert("Enter a four digit number between 0001 and 2021");
         } else {
-            return true;
+            return true
         }
     }
 
@@ -47,20 +50,33 @@ function nameGenerator() {
         for (let gender of sex) {
             if (gender.checked) {
                 return gender.value;
-            }
+            } else {
         }
     }
+    alert("please put the Gender male or female")
+}
+function calculatingcob(c, d) {  
+    if (c.length == 2 || d.length == 2) {
+        return yob%100; 
+    } else {
+        return Math.floor(yob+100) + 1;
+                }         
+
+    } 
+
     let validateddob =validatingdob();
     let validatedmob =validatingmob();
     let validatedyob =validatingyob();
     let checkedgender = gender();
+    let cob = calculatingcob();
 
-    let dofWeekNumber = Math.floor((((Number(yob.slice(0, 2)) / 4) - 2 * Number(yob.slice(0, 2)) - 1) +
+
+    let dayOfWeekNumber = Math.floor((((Number(cob) / 4) - 2 * Number(cob) - 1) +
         ((5 * Number(yob.slice(2, 4)) / 4)) + ((26 * (mob + 1) / 10)) + dob) % 7);
    
     if (checkedgender == "male" && validateddob && validatedmob && validatedyob) {
        
-        switch (dofWeekNumber) {
+        switch (dayOfWeekNumber) {
             case 1:
                 document.getElementById("input-name").innerHTML = " " + male[0];
                 document.getElementById("input-day").innerHTML = " " + day[0];
@@ -89,10 +105,12 @@ function nameGenerator() {
                 document.getElementById("input-name").innerHTML = " " + male[6];
                 document.getElementById("input-day").innerHTML = " " + day[6];
                 return false;
+                default:
+                alert("an expectional error has occurred");
         }
     } else if (checkedgender == "female" && validateddob && validatedmob && validatedyob) {
        
-        switch (dofWeekNumber) {
+        switch (dayOfWeekNumber) {
             case 1:
                 document.getElementById("input-name").innerHTML = " " + female[0];
                 document.getElementById("input-day").innerHTML = " " + day[0];
@@ -121,7 +139,11 @@ function nameGenerator() {
                 document.getElementById("input-name").innerHTML = " " + female[6];
                 document.getElementById("input-day").innerHTML = " " + day[6];
                 return false;
+                default:
+                    alert("an expectional error has occurred");
+            }
+        } else {
+            alert("please start again!");
         }
     }
-}
     
