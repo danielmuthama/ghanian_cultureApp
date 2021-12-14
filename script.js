@@ -72,7 +72,7 @@ function calculatingcob(c, d) {
 
 
     let dayOfWeekNumber = Math.floor((((Number(cob) / 4) - 2 * Number(cob) - 1) +
-        ((5 * Number(yob.slice(2, 4)) / 4)) + ((26 * (mob + 1) / 10)) + dob) % 7);
+        ((5 * Number(yob) / 4)) + ((26 * (mob + 1) / 10)) + dob) % 7);
    
     if (checkedgender == "male" && validateddob && validatedmob && validatedyob) {
        
