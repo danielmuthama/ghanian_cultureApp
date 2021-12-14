@@ -7,8 +7,16 @@ function nameGenerator() {
     let dob = Number(document.getElementById("d").value);
     let mob = Number(document.getElementById("m").value);
     let yob = (document.getElementById("y").value);
+    let button = (document.getElementById("submit").disabled = true);
     let sex = document.getElementsByName("gender");
+    
+    function buttonDisable() {
+        if (button = true) {
+            alert ("Refresh the PAGE")
+        }
+    }
 
+ 
 
     function validatingdob() {
         if (mob === 2 && Number(yob) % 4 === 0) {
@@ -147,6 +155,7 @@ function nameGenerator() {
                 return false;
                 default:
                     alert("an expectional error has occurred");
+                    buttonDisable();
             }
         } else {
             alert("please start again!");
