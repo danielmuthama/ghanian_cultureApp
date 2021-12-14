@@ -3,6 +3,7 @@ function nameGenerator() {
     let male= ["Kwasi", "Kwadwo", "Kwabena", "Kwaku", "Yaw", "Kofi", "Kwame"];
     let day = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
     
+    
     let dob = Number(document.getElementById("d").value);
     let mob = Number(document.getElementById("m").value);
     let yob = (document.getElementById("y").value);

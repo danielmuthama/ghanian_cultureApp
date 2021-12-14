@@ -18,11 +18,11 @@
     <div class="section-2">
         <div class="form-section">
             <div class="input">
-            <form class="form" onsubmit="return nameGenerator()">
+            <form class="form" onsubmit="nameGenerator()">
                 <div class="date">
                 <h3 class="gender"><strong>Select the Gender</strong></h3>
-                <input type="radio" name="gender"  value="male" > Male<br>
-                <input type="radio" name="gender"  value="female"> Female
+                <input type="radio" name="gender" id="m" value="male" > Male<br>
+                <input type="radio" name="gender"  id="f" value="female"> Female
                 </div>
                 <div class="day-input">
                 <h3 class="birth-details"><strong>Birth Details</strong></h3>
@@ -42,7 +42,7 @@
                 </div>
             </form>
             <div class="names">
-                <p class="message">My is <span id="input-name"> (name) </span>, I was born in <span id="input-day">(day)</span></p>
+                <p class="message">My is <span id="input-name"> (input-name) </span>, I was born in <span id="input-day">(input-day)</span></p>
             </div>
             </div>
         </div>
