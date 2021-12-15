@@ -7,16 +7,19 @@ function nameGenerator() {
     let dob = Number(document.getElementById("d").value);
     let mob = Number(document.getElementById("m").value);
     let yob = (document.getElementById("y").value);
-    let button = (document.getElementById("submit").disabled = true);
+    let buttonx = (document.getElementById("submit").disabled = true);
     let sex = document.getElementsByName("gender");
     
-    function buttonDisable() {
-        if (button = true) {
-            alert ("Refresh the PAGE")
-        }
-    }
+
 
  
+    function validatingmob() {
+        if (mob < 1 || mob > 12) {
+            alert("Please Enter a valid number between 1 and 12");
+         } else {
+            return true;
+        }
+    }
 
     function validatingdob() {
         if (mob === 2 && Number(yob) % 4 === 0) {
@@ -35,13 +38,7 @@ function nameGenerator() {
     }
     
 
-    function validatingmob() {
-        if (mob < 1 || mob > 12) {
-            alert('Enter a valid month between 1 and 12');
-        } else {
-            return true;
-        }
-    }
+
 
 
     
@@ -71,7 +68,6 @@ function nameGenerator() {
     } else if(d.length == 2 && yob > 1 && yob < 2021 ){
         return d;
         }         
-
     } */
 
     let validateddob =validatingdob();
@@ -155,10 +151,16 @@ function nameGenerator() {
                 return false;
                 default:
                     alert("an expectional error has occurred");
-                    buttonDisable();
             }
+            function buttonDisable() {
+                if (buttonx = true) {
+                    alert ("Refresh the PAGE")
+                }
+            }
+
+            buttonDisable();
         } else {
-            alert("please start again!");
+            alert("please RESTART!");
         }
     }
     
