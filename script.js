@@ -1,9 +1,9 @@
 function generateName() {
-    let male = ["Kwasi", "Kwadwo", "Kwabena", "Kwaku", "Yaw", "Kofi", "Kwame"];
-    let female = ["Akosua", "Adwoa", "Abenaa", "Akua", "Yaa", "Afua", "Ama"];
-    let day = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+    let maleNames = ["Kwasi", "Kwadwo", "Kwabena", "Kwaku", "Yaw", "Kofi", "Kwame"];
+    let femaleNames = ["Akosua", "Adwoa", "Abenaa", "Akua", "Yaa", "Afua", "Ama"];
+    let dayNames = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 
-    let yob = document.getElementById("year").value;
+    let yearOfBirth = document.getElementById("year").value;
     let month = Number(document.getElementById("month").value);
     let day = Number(document.getElementById("day").value);
     let genders = document.getElementsByName("gender");
@@ -19,7 +19,7 @@ function generateName() {
     let monthOkay = validateMonth();
 
     function validateYear() {
-        if (Number(yob) < 0001 || Number(yob) > 2021 && yob.length != 4) {
+        if (Number(yearOfBirth) < 0001 || Number(yearOfBirth) > 2021 && yearOfBirth.length != 4) {
             alert("Please enter a valid year(\"0001 - 2021\")");
         } else {
             return true;
@@ -28,7 +28,7 @@ function generateName() {
     let yearOkay = validateYear();
 
     function ValidateDay() {
-        if (month === 2 && Number(yob) % 4 === 0) {
+        if (month === 2 && Number(yearOfBirth) % 4 === 0) {
             if (day < 1 || day > 28) {
                 alert("please enter a valid date(\"1-28\")");
             } else if (day < 1 && day > 29) {
@@ -56,38 +56,38 @@ function generateName() {
 
     let userGender = getGender();
 
-    let dayOfWeekNumber = Math.floor((((Number(yob.slice(0, 2)) / 4) - 2 * Number(yob.slice(0, 2)) - 1) +
-        ((5 * Number(yob.slice(2, 4)) / 4)) + ((26 * (month + 1) / 10)) + day) % 7);
+    let dayOfWeekNumber = Math.floor((((Number(yearOfBirth.slice(0, 2)) / 4) - 2 * Number(yearOfBirth.slice(0, 2)) - 1) +
+        ((5 * Number(yearOfBirth.slice(2, 4)) / 4)) + ((26 * (month + 1) / 10)) + day) % 7);
 
     if (userGender == "male" && monthOkay && dayOkay && yearOkay) {
         switch (dayOfWeekNumber) {
             case 1:
-                document.getElementById("input-name").innerHTML = " " + male[0];
-                document.getElementById("input-day").innerHTML = " " + day[0];
+                document.getElementById("input-name").innerHTML = " " + maleNames[0];
+                document.getElementById("input-day").innerHTML = " " + dayNames[0];
                 return false;
             case 2:
-                document.getElementById("input-name").innerHTML = " " + male[1];
-                document.getElementById("input-day").innerHTML = " " + day[1];
+                document.getElementById("input-name").innerHTML = " " + maleNames[1];
+                document.getElementById("input-day").innerHTML = " " + dayNames[1];
                 return false;
             case 3:
-                document.getElementById("input-name").innerHTML = " " + male[2];
-                document.getElementById("input-day").innerHTML = " " + day[2];
+                document.getElementById("input-name").innerHTML = " " + maleNames[2];
+                document.getElementById("input-day").innerHTML = " " + dayNames[2];
                 return false;
             case 4:
-                document.getElementById("input-name").innerHTML = " " + male[3];
-                document.getElementById("input-day").innerHTML = " " + day[3];
+                document.getElementById("input-name").innerHTML = " " + maleNames[3];
+                document.getElementById("input-day").innerHTML = " " + dayNames[3];
                 return false;
             case 5:
-                document.getElementById("input-name").innerHTML = " " + male[4];
-                document.getElementById("input-day").innerHTML = " " + day[4];
+                document.getElementById("input-name").innerHTML = " " + maleNames[4];
+                document.getElementById("input-day").innerHTML = " " + dayNames[4];
                 return false;
             case 6:
-                document.getElementById("input-name").innerHTML = " " + male[5];
-                document.getElementById("input-day").innerHTML = " " + day[5];
+                document.getElementById("input-name").innerHTML = " " + maleNames[5];
+                document.getElementById("input-day").innerHTML = " " + dayNames[5];
                 return false;
             case 7:
-                document.getElementById("input-name").innerHTML = " " + male[6];
-                document.getElementById("input-day").innerHTML = " " + day[6];
+                document.getElementById("input-name").innerHTML = " " + maleNames[6];
+                document.getElementById("input-day").innerHTML = " " + dayNames[6];
                 return false;
             default:
                 alert("An expected error has occurred");
@@ -95,32 +95,32 @@ function generateName() {
     } else if (userGender == "female" && monthOkay && dayOkay && yearOkay) {
         switch (dayOfWeekNumber) {
             case 1:
-                document.getElementById("input-name").innerHTML = " " + female[0];
-                document.getElementById("input-day").innerHTML = " " + day[0];
+                document.getElementById("input-name").innerHTML = " " + femaleNames[0];
+                document.getElementById("input-day").innerHTML = " " + dayNames[0];
                 return false;
             case 2:
-                document.getElementById("input-name").innerHTML = " " + female[1];
-                document.getElementById("input-day").innerHTML = " " + day[1];
+                document.getElementById("input-name").innerHTML = " " + femaleNames[1];
+                document.getElementById("input-day").innerHTML = " " + dayNames[1];
                 return false;
             case 3:
-                document.getElementById("input-name").innerHTML = " " + female[2];
-                document.getElementById("input-day").innerHTML = " " + day[2];
+                document.getElementById("input-name").innerHTML = " " + femaleNames[2];
+                document.getElementById("input-day").innerHTML = " " + dayNames[2];
                 return false;
             case 4:
-                document.getElementById("input-name").innerHTML = " " + female[3];
-                document.getElementById("input-day").innerHTML = " " + day[3];
+                document.getElementById("input-name").innerHTML = " " + femaleNames[3];
+                document.getElementById("input-day").innerHTML = " " + dayNames[3];
                 return false;
             case 5:
-                document.getElementById("input-name").innerHTML = " " + female[4];
-                document.getElementById("input-day").innerHTML = " " + day[4];
+                document.getElementById("input-name").innerHTML = " " + femaleNames[4];
+                document.getElementById("input-day").innerHTML = " " + dayNames[4];
                 return false;
             case 6:
-                document.getElementById("input-name").innerHTML = " " + female[5];
-                document.getElementById("input-day").innerHTML = " " + day[5];
+                document.getElementById("input-name").innerHTML = " " + femaleNames[5];
+                document.getElementById("input-day").innerHTML = " " + dayNames[5];
                 return false;
             case 7:
-                document.getElementById("input-name").innerHTML = " " + female[6];
-                document.getElementById("input-day").innerHTML = " " + day[6];
+                document.getElementById("input-name").innerHTML = " " + femaleNames[6];
+                document.getElementById("input-day").innerHTML = " " + dayNames[6];
                 return false;
             default:
                 alert("An expected error has occurred!");
