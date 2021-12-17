@@ -1,90 +1,65 @@
-function nameGenerator() {
-    let male= ["Kwasi", "Kwadwo", "Kwabena", "Kwaku", "Yaw", "Kofi", "Kwame"];
+function generateName() {
+    let male = ["Kwasi", "Kwadwo", "Kwabena", "Kwaku", "Yaw", "Kofi", "Kwame"];
     let female = ["Akosua", "Adwoa", "Abenaa", "Akua", "Yaa", "Afua", "Ama"];
     let day = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-    
 
-    let dob = Number(document.getElementById("d").value);
-    let mob = Number(document.getElementById("m").value);
-    let yob = (document.getElementById("y").value);
-    let buttonx = (document.getElementById("submit").disabled = true);
-    let sex = document.getElementsByName("gender");
-    
+    let yob = document.getElementById("year").value;
+    let month = Number(document.getElementById("month").value);
+    let day = Number(document.getElementById("day").value);
+    let genders = document.getElementsByName("gender");
 
-
- 
-    function validatingmob() {
-        if (mob < 1 || mob > 12) {
-            alert("Please Enter a valid number between 1 and 12");
-         } else {
+    function validateMonth() {
+        if (month < 1 || month > 12) {
+            alert('Please enter a valid month("1-12")');
+        } else {
             return true;
         }
     }
 
-    function validatingdob() {
-        if (mob === 2 && Number(yob) % 4 === 0) {
-            if (dob < 1 || dob > 28) {
-                alert("This isn't a leap year enter a valid date between 1 and 28");
-            } else if (dob < 1 && dob > 29) {
-                alert("This is a leap year enter a valid date between 1 and 29");
+    let monthOkay = validateMonth();
+
+    function validateYear() {
+        if (Number(yob) < 0001 || Number(yob) > 2021 && yob.length != 4) {
+            alert("Please enter a valid year(\"0001 - 2021\")");
+        } else {
+            return true;
+        }
+    }
+    let yearOkay = validateYear();
+
+    function ValidateDay() {
+        if (month === 2 && Number(yob) % 4 === 0) {
+            if (day < 1 || day > 28) {
+                alert("please enter a valid date(\"1-28\")");
+            } else if (day < 1 && day > 29) {
+                alert("please enter a valid date(\"1-29\")");
             } else {
                 return true;
             }
-        } else if (dob < 1 || dob > 31) {
-            alert("Enter a valid date between 1 and 31");
+        } else if (day < 1 || day > 31) {
+            alert("Please enter valid date(\"1-31\")");
         } else {
             return true;
         }
     }
-    
+
+    let dayOkay = ValidateDay();
 
 
-
-
-    
-    function validatingyob() {
-        if (Number(yob) < 0001 || Number(yob) > 2021 || yob.length != 4) {
-            alert("Enter a four digit number between 0001 and 2021");
-        } else {
-            return true
-        }
-    }
-
-    function gender() {
-        for (let gender of sex) {
+    function getGender() {
+        for (let gender of genders) {
             if (gender.checked) {
                 return gender.value;
-            } else {
+            }
         }
     }
-    alert("please put the Gender male or female")
-}
 
-/*function calculatingcob(c,d) {  
-    let c = yob%100;
-    let d = Math.floor(yob+100) + 1;
-    if (c.length == 2 && yob > 1 && yob < 2021 ) {
-        return c; 
-    } else if(d.length == 2 && yob > 1 && yob < 2021 ){
-        return d;
-        }         
-    } */
+    let userGender = getGender();
 
-    let validateddob =validatingdob();
-    let validatedmob =validatingmob();
-    let validatedyob =validatingyob();
-    let checkedgender = gender();
-    //let cob = calculatingcob();
+    let dayOfWeekNumber = Math.floor((((Number(yob.slice(0, 2)) / 4) - 2 * Number(yob.slice(0, 2)) - 1) +
+        ((5 * Number(yob.slice(2, 4)) / 4)) + ((26 * (month + 1) / 10)) + day) % 7);
 
-
-    
-    function randomNumber(min, max) {
-            return Math.floor(Math.random() * (max - min)) + min;
-          }
-    let dayOfWeekNumber = randomNumber(1, 7)
-   
-    if (checkedgender == "male" && validateddob && validatedmob && validatedyob) {
-       
+    if (userGender == "male" && monthOkay && dayOkay && yearOkay) {
         switch (dayOfWeekNumber) {
             case 1:
                 document.getElementById("input-name").innerHTML = " " + male[0];
@@ -114,12 +89,10 @@ function nameGenerator() {
                 document.getElementById("input-name").innerHTML = " " + male[6];
                 document.getElementById("input-day").innerHTML = " " + day[6];
                 return false;
-               
-                default:
-                alert("an expectional error has occurredd");
+            default:
+                alert("An expected error has occurred");
         }
-    } else if (checkedgender == "female" && validateddob && validatedmob && validatedyob) {
-       
+    } else if (userGender == "female" && monthOkay && dayOkay && yearOkay) {
         switch (dayOfWeekNumber) {
             case 1:
                 document.getElementById("input-name").innerHTML = " " + female[0];
@@ -149,18 +122,10 @@ function nameGenerator() {
                 document.getElementById("input-name").innerHTML = " " + female[6];
                 document.getElementById("input-day").innerHTML = " " + day[6];
                 return false;
-                default:
-                    alert("an expectional error has occurred");
-            }
-            function buttonDisable() {
-                if (buttonx = true) {
-                    alert ("Refresh the PAGE")
-                }
-            }
-
-            buttonDisable();
-        } else {
-            alert("please RESTART!");
+            default:
+                alert("An expected error has occurred!");
         }
+    } else {
+        alert("Please try again");
     }
-    
+}
