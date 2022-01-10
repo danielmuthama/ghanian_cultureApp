@@ -1,4 +1,4 @@
-# Ghanian-cultureApp
+### Ghanian-cultureApp
 
 ##### By Daniel Muthama
 
