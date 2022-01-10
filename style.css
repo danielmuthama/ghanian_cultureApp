@@ -8,7 +8,7 @@
     justify-content: center;
     align-items: center;
     flex-basis: 1;
-    background-image: url(assets/ghana.jpg);
+    background-image: url(assets/ghana.png);
     background-size: cover;
 }
 .section-1 {
@@ -65,6 +65,7 @@
 .social-m {
     padding: 0px 0px 4px 0px;
     float: right;
+
 }
 .style {
     text-align: center;
