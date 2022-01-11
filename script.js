@@ -53,11 +53,19 @@ function generateName() {
             }
         }
     }
-
     let userGender = getGender();
 
-    let dayOfWeekNumber = Math.floor((((Number(yearOfBirth.slice(0, 2)) / 4) - 2 * Number(yearOfBirth.slice(0, 2)) - 1) +
-        ((5 * Number(yearOfBirth.slice(2, 4)) / 4)) + ((26 * (month + 1) / 10)) + day) % 7);
+    var CC = parseInt(yearOfBirth.slice(0, 2));
+    var YY = parseInt(yearOfBirth.slice(2, 5));
+    var MM = parseInt(month);
+    var DD = parseInt(day);
+
+
+
+
+
+
+    let dayOfWeekNumber = Math.floor((((CC / 4) - 2 * CC - 1) + ((5 * YY) / 4)) + ((26 * (MM + 1) / 10)) + DD) % 7);
 
     if (userGender == "male" && monthOkay && dayOkay && yearOkay) {
         switch (dayOfWeekNumber) {

@@ -20,7 +20,7 @@
 
 }
 .section-2 {
-    height: 62vh;
+    height: 67vh;
     width: 55%;
     background-color: white;
     padding: 2% 3% 2% 3%;
@@ -81,7 +81,11 @@ img {
     float: left;
     width: auto;
     height: auto;
-    max-width: 120px;
-    max-height:120px ;
+    max-width: 10.5%;
+    max-height:10.5%;
     border-radius: 20px;
+}
+#day, #month, #year {
+    box-shadow: 0 3px 10px green;
+    height: 30%;
 }
