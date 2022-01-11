@@ -4,8 +4,8 @@ function generateName() {
     let dayNames = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 
     let yearOfBirth = document.getElementById("year").value;
-    let month = Number(document.getElementById("month").value);
-    let day = Number(document.getElementById("day").value);
+    let month = (document.getElementById("month").value);
+    let day = (document.getElementById("day").value);
     let genders = document.getElementsByName("gender");
 
     function validateMonth() {
@@ -55,18 +55,19 @@ function generateName() {
     }
     let userGender = getGender();
 
-    var CC = parseInt(yearOfBirth.slice(0, 2));
-    var YY = parseInt(yearOfBirth.slice(2, 5));
+    var century = yearOfBirth.slice(0, 2);
+    var year = yearOfBirth.slice(2, 5);
+     
+        
+
+    var CC = parseInt(century);
+    var YY = parseInt(year);
     var MM = parseInt(month);
     var DD = parseInt(day);
 
-
-
-
-
-
-    let dayOfWeekNumber = Math.floor((((CC / 4) - 2 * CC - 1) + ((5 * YY) / 4)) + ((26 * (MM + 1) / 10)) + DD) % 7);
-
+    var dayOfWeekNumber = Math.floor(((((CC/4) - 2 * CC - 1) + ((5 * YY) / 4)) + ((26 * (MM + 1) / 10)) + DD) % 7);
+    
+    console.log(dayOfWeekNumber);
     if (userGender == "male" && monthOkay && dayOkay && yearOkay) {
         switch (dayOfWeekNumber) {
             case 1:
